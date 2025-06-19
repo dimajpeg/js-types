@@ -1,5 +1,5 @@
 // перше завдання
-// result = (0.1 + 0.2).toFixed(1)
+// let result = (0.1 + 0.2).toFixed(1)
 // console.log(result)
 // console.log(typeof result)
 // let? и Number?  и typeof
@@ -17,34 +17,36 @@ console.log(c)
 console.log(typeof a)
 
 //третє завдання
-const Form = document.getElementById("form-1")
-const Input = document.getElementById("file-input")
+const form = document.getElementById("form-1")
+const input = document.getElementById("file-input")
 
-Form.addEventListener("submit", (event) => {
+form.addEventListener("submit", (event) => {
   event.preventDefault()
 
-  const gb = Number(Input.value)
+  const gb = Number(input.value)
 
   const mb = gb * 1024
 
   // const files = mb / 820
-  const files = Number((mb / 820).toFixed(0)) 
+  // const files = Number((mb / 820).toFixed(0)) 
+
+  const files = Math.floor(mb / 820)
 
   console.log(files);
 })
 
-const Form2 = document.getElementById("form-2")
-const Wallet = document.getElementById("wallet-input")
-const Price = document.getElementById("price-input")
+const form2 = document.getElementById("form-2")
+const walletInput = document.getElementById("wallet-input")
+const priceInput = document.getElementById("price-input")
 
-Form2.addEventListener("submit", (event) => {
+form2.addEventListener("submit", (event) => {
   event.preventDefault()
 
-  const wallet = Number(Wallet.value)
-  const price = Number(Price.value)
+  const wallet = Number(walletInput.value)
+  const price = Number(priceInput.value)
 
-  const result1 = (wallet / price).toFixed(0)
-  
+  const result1 = Math.floor(wallet / price)
+
   const result2 = (wallet - (price * result1).toFixed(2))
 
   console.log("Ви отримаєте " + result1)
